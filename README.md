@@ -1,125 +1,201 @@
-# Projeto-final-de-LP2-Sistema-de-Agenda-de-Compromissos
-// NOTE: fazer o restante do readme e docxigen
+# TimeMaster - Sistema de Agenda de Compromissos
+## 📋 Descrição do Projeto
 
-## PROPOSTA 4 — Sistema de Agenda de Compromissos 
-“TimeMaster” — Gerenciador inteligente de compromissos 
+O TimeMaster é um gerenciador inteligente de compromissos desenvolvido em Java que utiliza estruturas de dados avançadas e conceitos de Programação Orientada a Objetos para oferecer uma gestão eficiente de agenda pessoal e profissional.
 
-### Domínio 
+## 🎯 Funcionalidades Principais
 
-• Classe Base: Compromisso 
-• Subclasses: 
-    o CompromissoPessoal 
-    o CompromissoProfissional 
-### Funcionalidades 
+###    ✅ Cadastro, edição, busca e remoção de compromissos
 
-• Cadastrar, editar, buscar e remover compromissos. 
-• Checar conflitos de agenda. 
-• Regra de negócio: 
-        o Data não pode ser passada. 
-        o Não pode registrar dois compromissos no mesmo horário → 
-        NegocioException. 
-### Árvore 
+###    ⚠️ Detecção de conflitos de horário na agenda
 
-• ABB por horário (LocalDateTime). 
-### Ordenação 
+###    📊 Classificação de compromissos pessoais e profissionais
 
-• HeapSort por: 
-    o Data, 
-    o Prioridade, 
-    o Categoria. 
-### POO Avançada 
+###    🔍 Busca eficiente usando Árvore Binária de Busca (ABB)
 
-• Interfaces + Repositório genérico. 
-• Classe genérica de repositorio com Function<Compromisso, String> para ID. 
+###    📈 Ordenação por data, prioridade e categoria usando HeapSort
 
-### Anotação 
-• @InfoAutor em Compromisso e RepositorioHash.
+###    🏷️ Sistema de prioridades para organização inteligente
 
+## 🏗️ Estrutura do Domínio
 
-Nome da Tarefa:
-Projeto U3 — Sistema Livre com Árvore + Ordenação + POO Avançada (6pt)
-Descrição:
+### Classes Principais
 
-Projeto U3 — Sistema Livre com Árvore + Ordenação + POO Avançada
+    Compromisso (Classe Base)
 
- 
+        CompromissoPessoal (Subclasse)
 
-Entrega final: 27/11/2025 — Valor: 6 pts
+        CompromissoProfissional (Subclasse)
 
- 
+### Regras de Negócio
 
-Desenvolva uma aplicação tema livre (ex.: produtos, alunos, agenda) que integre:
+    ❌ Data não pode ser no passado
 
- 
+    ❌ Não é permitido registrar dois compromissos no mesmo horário
 
-Estrutura de dados de árvore (ABB ou AVL).
+    ✅ Validações com NegocioException
 
-Algoritmo de ordenação (MergeSort ou HeapSort).
+## 🛠️ Tecnologias e Conceitos Aplicados
+### Estruturas de Dados
 
-POO avançada: interface(s), herança + polimorfismo, classe genérica, tratamento de exceções (inclui exceção de negócio).
+    Árvore Binária de Busca (ABB) por horário (LocalDateTime)
 
-Annotation personalizada lida em tempo de execução (Reflection).
+    HeapSort para ordenação múltipla
 
-Coleções genéricas (ArrayList / HashMap) quando fizer sentido.
+    HashMap para repositório genérico
 
- 
+### POO Avançada
 
-Requisitos obrigatórios
+    Herança e Polimorfismo
 
- 
+    Interfaces (Repositorio<T>, Ordenacao<T>, Arvore<K,V>)
 
-Domínio com classe base + 2 subclasses (polimorfismo ativo).
+    Classe Genérica RepositorioHash<T>
 
-Interfaces (ex.: Repositorio<T>, Ordenacao<T>, Arvore<K,V>).
+    Tratamento de Exceções personalizadas
 
-Classe genérica (ex.: RepositorioHash<T> com Function<T,String> para ID).
+### Recursos Java
 
-Exceções: NegocioException (regra de negócio) + try/catch no Main com mensagens claras.
+    Annotations personalizadas (@InfoAutor)
 
-Annotation @InfoAutor (nome, data) aplicada em ≥2 classes; ler via reflexão e imprimir.
+    Reflection para leitura de metadados
 
-Árvore (ABB/AVL): inserir, buscar, travessia em-ordem (retornar valores ordenados pela chave).
+    Generics para type safety
 
-Ordenação (Merge/Heap): ordenar lista por Comparator.
+    Collections Framework
 
-Demonstração no Main: adicionar, listar, buscar, remover, imprimir em ordem (árvore) e ordenado (algoritmo).
+## 📁 Estrutura do Projeto
 
- 
+        src/
+        ├── model/
+        │   ├── Compromisso.java
+        │   ├── CompromissoPessoal.java
+        │   ├── CompromissoProfissional.java
+        │   └── enums/
+        │       ├── Prioridade.java
+        │       └── Categoria.java
+        ├── repository/
+        │   ├── Repositorio.java
+        │   ├── RepositorioHash.java
+        │   └── Arvore.java
+        ├── service/
+        │   ├── AgendaService.java
+        │   ├── OrdenacaoService.java
+        │   └── NegocioException.java
+        ├── annotation/
+        │   └── InfoAutor.java
+        └── main/
+            └── Main.java
 
-Entregáveis
+## 🚀 Como Compilar e Executar
 
- 
+### Pré-requisitos
 
-Código-fonte em packages (+ README com como compilar/rodar).
+Java JDK 11 ou superior
 
-Saída de console mostrando CRUD + árvore + ordenação + leitura de anotação.
+IDE Java (Eclipse, IntelliJ, VS Code) ou terminal
 
- 
+### Compilação via Terminal
 
-Checkpoints por aula (curtinhos)
+    # Navegar até o diretório src
+    cd src
 
- 
+    # Compilar todos os arquivos Java
+    javac -d ../bin main/Main.java
 
-16/10 – Annotations: criar @InfoAutor e anotar 2 classes.
+    # Executar a aplicação
+    java -cp ../bin main.Main
+## Execução em IDE
 
-21/10 – Reflexão: ler @InfoAutor no Main.
+Importe o projeto na sua IDE
 
-23/10 – Depuração: rodar com alguns registros; ajustar mensagens/exceções.
+Configure o JDK 11+
 
-28/10 – Profiling: medir tempo de ordenar N itens (log em ms).
+Execute a classe Main.java no pacote main
 
-30/10 – Estruturas (listas/pilhas): (opcional) fila/pilha pequena de ações.
+### 📊 Casos de Uso Demonstrados
 
-04/11 – Árvores/Grafos: árvore (ABB/AVL) funcional (inserir/buscar/em-ordem).
+### O sistema demonstra:
 
-06/11 – Integração de algoritmos: ligar sort por Comparator e comparar com em-ordem.
+CRUD Completo - Create, Read, Update, Delete
 
-11/11 – Revisão: limpar pacotes/nomes; README.
+Inserção na Árvore e travessia em-ordem
 
-18/11 – Orientações: roteirizar casos do Main (CRUD + árvore + sort).
+Ordenação com HeapSort por múltiplos critérios
 
-25/11 – Desenvolvimento: refino final.
+Tratamento de Exceções com mensagens amigáveis
 
-27/11 – Entrega: demonstração rodando.
-Período:
-Inicia em 18/11/2025 às 00h00 e finaliza em 27/11/2025 às 23h59
+Leitura de Annotations via Reflection
+
+Detecção de Conflitos de horário
+
+## ⚙️ Funcionalidades Técnicas
+### Árvore Binária de Busca
+
+Inserção ordenada por LocalDateTime
+
+Busca eficiente O(log n) em cenário balanceado
+
+Travessia em-ordem para listagem ordenada
+
+### Algoritmo HeapSort
+
+Ordenação por data, prioridade e categoria
+
+Implementação com Comparator
+
+Complexidade O(n log n)
+
+### Sistema de Exceções
+
+NegocioException para regras de domínio
+
+Try-catch no Main com feedback ao usuário
+
+Validações em tempo de execução
+
+## 🎨 Annotation Personalizada
+
+    @InfoAutor
+
+        Aplicada em Compromisso e RepositorioHash
+
+        Contém nome do autor e data de criação
+
+        Lida via Reflection no startup
+
+## 📝 Exemplo de Uso
+
+    // Criar compromisso profissional
+    Compromisso reuniao = new CompromissoProfissional(
+        "Reunião de Projeto",
+        LocalDateTime.of(2025, 11, 20, 14, 0),
+        Prioridade.ALTA,
+        "Sala 101"
+    );
+
+    // Adicionar à agenda
+    agendaService.adicionarCompromisso(reuniao);
+
+    // Listar compromissos ordenados
+    List<Compromisso> ordenados = ordenacaoService.ordenarPorData();
+
+## 🗓️ Cronograma de Desenvolvimento
+
+    Data	Checkpoint
+    16/10	Annotations: criar @InfoAutor
+    21/10	Reflexão: ler @InfoAutor no Main
+    23/10	Depuração e ajustes de exceções
+    28/10	Profiling: medir tempo de ordenação
+    04/11	Árvore ABB funcional
+    06/11	Integração do algoritmo de ordenação
+    11/11	Revisão final e organização
+    18/11	Roteirização dos casos de uso
+    25/11	Refinamento final
+    27/11	Entrega do projeto
+
+## 👥 Autores
+
+Projeto desenvolvido como trabalho final de Linguagem de Programação 2, implementando os conceitos aprendidos durante o curso.
+
+##### ⚠️ Nota: Este projeto é acadêmico e desenvolvido para fins educacionais, demonstrando a aplicação prática de estruturas de dados e conceitos avançados de POO em Java.
