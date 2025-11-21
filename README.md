@@ -1,7 +1,59 @@
 # TimeMaster - Sistema de Agenda de Compromissos
+Nome da Tarefa:
+Projeto U3 — Sistema Livre com Árvore + Ordenação + POO Avançada (6pt)
+Descrição:
+
+#### Projeto U3 — Sistema Livre com Árvore + Ordenação + POO Avançada
+
+## Entregáveis 
+
+Código-fonte em packages (+ README com como compilar/rodar).
+
+Saída de console mostrando CRUD + árvore + ordenação + leitura de anotação.
+
+# Período:
+Inicia em 18/11/2025 às 00h00 e finaliza em 27/11/2025 às 23h59
 ## 📋 Descrição do Projeto
 
 O TimeMaster é um gerenciador inteligente de compromissos desenvolvido em Java que utiliza estruturas de dados avançadas e conceitos de Programação Orientada a Objetos para oferecer uma gestão eficiente de agenda pessoal e profissional.
+
+# Descriçao da atividade Avaliativa: 
+
+### Entrega final: 27/11/2025 — Valor: 6 pts
+
+ 
+
+Desenvolva uma aplicação tema livre (ex.: produtos, alunos, agenda) que integre:
+
+Estrutura de dados de árvore (ABB ou AVL).
+
+Algoritmo de ordenação (MergeSort ou HeapSort).
+
+POO avançada: interface(s), herança + polimorfismo, classe genérica, tratamento de exceções (inclui exceção de negócio).
+
+Annotation personalizada lida em tempo de execução (Reflection).
+
+Coleções genéricas (ArrayList / HashMap) quando fizer sentido.
+
+ 
+
+## Requisitos obrigatórios
+
+Domínio com classe base + 2 subclasses (polimorfismo ativo).
+
+Interfaces (ex.: Repositorio<T>, Ordenacao<T>, Arvore<K,V>).
+
+Classe genérica (ex.: RepositorioHash<T> com Function<T,String> para ID).
+
+Exceções: NegocioException (regra de negócio) + try/catch no Main com mensagens claras.
+
+Annotation @InfoAutor (nome, data) aplicada em ≥2 classes; ler via reflexão e imprimir.
+
+Árvore (ABB/AVL): inserir, buscar, travessia em-ordem (retornar valores ordenados pela chave).
+
+Ordenação (Merge/Heap): ordenar lista por Comparator.
+
+Demonstração no Main: adicionar, listar, buscar, remover, imprimir em ordem (árvore) e ordenado (algoritmo).
 
 ## 🎯 Funcionalidades Principais
 
@@ -180,7 +232,7 @@ Validações em tempo de execução
     // Listar compromissos ordenados
     List<Compromisso> ordenados = ordenacaoService.ordenarPorData();
 
-## 🗓️ Cronograma de Desenvolvimento
+## 🗓️ Cronograma de Desenvolvimento dos conhecimentos em sala de aula:
 
     Data	Checkpoint
     16/10	Annotations: criar @InfoAutor
