@@ -249,7 +249,7 @@ Validações em tempo de execução
 ## 👥 Autores
 **Instituição:** Universidade Federal do Rio Grande do Norte (UFRN)
 
-**Departamento:** DEPARTAMENTO DE INFORMÁTICA E MATEMÁTICA APLICADA
+**Departamento:** DEPARTAMENTO DE INFORMÁTICA E MATEMÁTICA APLICADA **Período:** [2025.2]
 
 ### Identificação Pessoal
 **Professor** ALAN DE OLIVEIRA SANTANA
@@ -272,13 +272,5 @@ Validações em tempo de execução
 - **E-mail e @github:** 
      
      matheuscastro11213@gmail.com / https://github.com/Alomyr
-
-
-- **Período:** [2025.2]
-
-
-
-
-
 
 ##### ⚠️ Nota: Este projeto é acadêmico e desenvolvido para fins educacionais, demonstrando a aplicação prática de estruturas de dados e conceitos avançados de POO em Java. Projeto desenvolvido como trabalho final de Linguagem de Programação 2, implementando os conceitos aprendidos durante o curso.
