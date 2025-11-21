@@ -247,7 +247,38 @@ Validações em tempo de execução
     27/11	Entrega do projeto
 
 ## 👥 Autores
+**Instituição:** Universidade Federal do Rio Grande do Norte (UFRN)
 
-Projeto desenvolvido como trabalho final de Linguagem de Programação 2, implementando os conceitos aprendidos durante o curso.
+**Departamento:** DEPARTAMENTO DE INFORMÁTICA E MATEMÁTICA APLICADA
 
-##### ⚠️ Nota: Este projeto é acadêmico e desenvolvido para fins educacionais, demonstrando a aplicação prática de estruturas de dados e conceitos avançados de POO em Java.
+### Identificação Pessoal
+**Professor** ALAN DE OLIVEIRA SANTANA
+- **E-mail:**  alandeoliveirasantana@gmail.com
+
+
+- **Nome dos alunos:**
+
+    GUILHERME ANDRIEL FIGUEIREDO MEDEIROS DA SILVA
+
+    JAMILLY EMILLY DA SILVA CAMPELO
+
+    KEZIA KETILLEN SANTOS LIMA
+
+    MATHEUS VINICIUS SILVA FREIRE DE CASTRO
+
+    THEO HENRIQUE DA SILVA BORGES
+
+
+- **E-mail e @github:** 
+     
+     matheuscastro11213@gmail.com / https://github.com/Alomyr
+
+
+- **Período:** [2025.2]
+
+
+
+
+
+
+##### ⚠️ Nota: Este projeto é acadêmico e desenvolvido para fins educacionais, demonstrando a aplicação prática de estruturas de dados e conceitos avançados de POO em Java. Projeto desenvolvido como trabalho final de Linguagem de Programação 2, implementando os conceitos aprendidos durante o curso.
