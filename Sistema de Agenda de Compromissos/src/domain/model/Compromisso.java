@@ -5,13 +5,20 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
+/**
+ * @brief Classe abstrata base que representa um compromisso na agenda
+ *
+ * @note Classe base para hierarquia de compromissos usando herança
+ * @see CompromissoPessoal
+ * @see CompromissoProfissional
+ */
 @InfoAutor(
-    nome = "Matheus Castro", 
-    data = "27/11/2025",
-    versao = "1.0",
-    descricao = "Classe base para todos os tipo de compromisso"
+        nome = "Matheus Castro",
+        data = "27/11/2025",
+        versao = "1.0",
+        descricao = "Classe base para todos os tipo de compromisso"
 )
-public class Compromisso {
+public abstract class Compromisso {
 
     private String id;
     private LocalDate data;
@@ -68,6 +75,25 @@ public class Compromisso {
         this.prioridade = prioridade;
     }
 
+    /**
+     * @brief Construtor padrão sem parâmetros
+     * 
+     * @note Cria uma instância vazia de Compromisso
+     */
+    public Compromisso(){
+
+    }
+
+    /**
+     * @brief Construtor parametrizado completo
+     * 
+     * @param id Identificador único do compromisso
+     * @param data Data do compromisso
+     * @param hora Hora do compromisso
+     * @param titulo Título descritivo do compromisso
+     * @param descricao Descrição detalhada do compromisso
+     * @param prioridade Nível de prioridade (valores mais altos = maior prioridade)
+     */
     public Compromisso(String id, LocalDate data, LocalTime hora, String titulo, String descricao, int prioridade) {
         this.id = id;
         this.data = data;
@@ -77,7 +103,23 @@ public class Compromisso {
         this.prioridade = prioridade;
     }
 
+    /**
+     * @brief Combina data e hora em um único objeto LocalDateTime
+     * @return LocalDateTime representando a data e hora completas do compromisso
+     * 
+     * @note Método útil para comparações e ordenações por data/hora completa
+     */
     public LocalDateTime getDataHora() {
         return LocalDateTime.of(data, hora);
+    }
+    
+    /**
+     * @brief Representação em string do compromisso
+     * @return String formatada com informações do compromisso
+     */
+    @Override
+    public String toString() {
+        return String.format("Compromisso [ID: %s, Data: %s, Hora: %s, Título: %s, Prioridade: %d]", 
+                           id, data, hora, titulo, prioridade);
     }
 }
