@@ -2,8 +2,6 @@ package repository;
 
 import annotation.InfoAutor;
 import domain.model.Compromisso;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @brief Implementação concreta de repositório para entidades Compromisso
@@ -20,7 +18,6 @@ import java.util.List;
 public class Repositorio {
 
     private final Arvore tree = new Arvore();
-    private final List<Compromisso> lista = new ArrayList<>(); //tirar isso aqui depois (tem que ser árvore não lista)
 
     /**
      * @brief Adiciona um novo compromisso ao repositório
@@ -35,17 +32,7 @@ public class Repositorio {
      * @param c Compromisso a ser removido do repositório
      */
     public void remover(Compromisso c) {
-        
-    }
-
-    /**
-     * @brief Retorna todos os compromissos armazenados
-     * @return List<Compromisso> contendo todos os compromissos do repositório
-     * 
-     * @note Retorna uma nova lista para evitar modificações externas na lista interna
-     */
-    public List<Compromisso> buscarTodos() {
-        return new ArrayList<>(lista);
+        tree.Remover(c, tree.getRaiz());
     }
 
     /**
@@ -53,11 +40,9 @@ public class Repositorio {
      * @param id Identificador do compromisso a ser buscado
      * @return Compromisso encontrado ou null se não existir
      */
+    //TODO @Guilherme-Andriel buscar por id. Tem que pegar a árvore, transformar numa lista, e buscar por id nessa lista.
     public Compromisso buscarPorId(String id) {
-        return lista.stream()
-                .filter(c -> c.getId().equals(id))
-                .findFirst()
-                .orElse(null);
+        return null;
     }
 
     public Arvore getTree(){

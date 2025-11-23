@@ -7,7 +7,7 @@ import domain.model.CompromissoPessoal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.List;
+import repository.NoArvore;
 import repository.Repositorio;
 
 /**
@@ -97,7 +97,8 @@ public class CompromissoService {
 
         LocalDateTime dt = LocalDateTime.of(novaData, novaHora);
 
-        Compromisso conflito = repo.getTree().buscarPorDataHora(repo.getTree().getRaiz(), dt);
+        NoArvore NoConflito = repo.getTree().buscarPorDataHora(repo.getTree().getRaiz(), dt);
+        Compromisso conflito = NoConflito.getCompromisso();
         if (conflito != null && conflito != c) {
             throw new NegocioException("Conflito de horário.");
         }
@@ -128,7 +129,7 @@ public class CompromissoService {
      * 
      * @note A lista retornada é uma cópia para evitar modificações externas
      */
-    public List<Compromisso> listarTodos() {
-        return repo.buscarTodos();
+    public void listarTodos() {
+        repo.getTree().printTree(repo.getTree().getRaiz());
     }
 }

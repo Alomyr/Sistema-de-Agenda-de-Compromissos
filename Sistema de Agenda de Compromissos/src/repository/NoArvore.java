@@ -6,11 +6,19 @@ public class NoArvore {
     Compromisso value;
     NoArvore left;
     NoArvore right;
+    NoArvore pai;
 
     public NoArvore(Compromisso compromisso, NoArvore left, NoArvore right){
         this.value = compromisso;
         this.left = left;
         this.right = right;
+    }
+
+    public NoArvore(){
+        this.value = null;
+        this.left = null;
+        this.right = null;
+        this.pai = null;
     }
 
 
@@ -24,6 +32,9 @@ public class NoArvore {
     public NoArvore getRight(){
         return this.right;
     }
+    public NoArvore getPai(){
+        return this.pai;
+    }
 
     public void setCompromisso(Compromisso compromisso){
         this.value = compromisso;
@@ -33,5 +44,8 @@ public class NoArvore {
     }
     public void setRight(NoArvore right){
         this.right = right;
+    }
+    public void setPai(NoArvore pai){
+        this.pai = pai;
     }
 }
