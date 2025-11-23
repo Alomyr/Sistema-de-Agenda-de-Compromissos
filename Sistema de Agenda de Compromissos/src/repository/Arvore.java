@@ -6,10 +6,18 @@ import java.time.LocalDateTime;
 public class Arvore {
     private NoArvore raiz;
 
+    /**
+     * @brief Constrói a árvore com um nó raíz padrão
+     */
     public Arvore(){
         raiz = new NoArvore();
     }
 
+    /**
+     * @brief Adiciona um compromisso na Árvore Binária de Busca
+     * @param compromisso Compromisso a ser inserido
+     * @param noAtual Nó raíz da árvore
+     */
     public void Adicionar(Compromisso compromisso, NoArvore noAtual){
         NoArvore novoNo = new NoArvore(compromisso, null, null);
         if (this.raiz.value == null){ this.raiz = novoNo;}
@@ -34,6 +42,11 @@ public class Arvore {
         }
     }
 
+    /**
+     * @brief Remove um compromisso da Árvore Binária de Busca
+     * @param compromisso Compromisso a ser removido
+     * @param noAtual Nó raiz da árvore
+     */
     public void Remover(Compromisso compromisso, NoArvore noAtual){
         NoArvore target = buscarPorDataHora(noAtual, compromisso.getDataHora());
 
@@ -55,6 +68,7 @@ public class Arvore {
             target.value = target.right.value;
             Remover(target.right.value, target.right);
         }
+        //trata o caso do nó a ser removido ter dois filhos
         else if (target.left != null && target.right != null){
             NoArvore succ = getSucc(target);
             target.value = succ.value;
@@ -81,43 +95,46 @@ public class Arvore {
         }
     }
 
-    //Aux functions
+    /**
+     * @brief Retorna o mínimo de uma árvore específica
+     * @param root Nó raíz da árvore
+     * @return Nó cuja dataHora é menor nessa Sub-Árvore
+     */
     public NoArvore getMin(NoArvore root){
         while (root.left != null){
             return getMin(root.left);
         }
         return root;
     }
-    public NoArvore getMax(NoArvore root){
-        while (root.right != null){
-            return getMin(root.right);
-        }
-        return root;
-    }
 
-    public NoArvore getPred(NoArvore root){
-        if (root.left != null){
-            return getMax(root.left);
-        }
-        return null;
-    }
-
+    /**
+     * @brief Retorna sucessor de uma determinada árvore
+     * @param root Nó raíz da árvore
+     * @return Nó cuja dataHora é a sucessora do nó raíz
+     */
     public NoArvore getSucc(NoArvore root){
         if (root.right != null){
             return getMin (root.right);
         }
         return null;
-        
     }
 
+    /**
+     * @return Retorna a raiz da árvore
+     */
     public NoArvore getRaiz(){
         return this.raiz;
     }
 
+    //TODO: Ajeitar esse print (Só ta imprimindo a hora, para fins de teste)
+    /**
+     * @brief Imprime a árvore em In-Order (Ordem de dataHora)
+     * @param no
+     */
     public void printTree(NoArvore no){
-        if (no.left != null) printTree(no.left);
-        System.out.println(no.value.getDataHora() + " ");
-        if (no.right != null) printTree(no.right);
+        if (no.left != null || no.value != null) printTree(no.left);
+        if (no.value != null) System.out.println(no.value.getDataHora() + " ");
+        if (no.right != null || no.value != null) printTree(no.right);
     }
     
 }

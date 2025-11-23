@@ -2,6 +2,8 @@ package repository;
 
 import annotation.InfoAutor;
 import domain.model.Compromisso;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @brief Implementação concreta de repositório para entidades Compromisso
@@ -40,7 +42,6 @@ public class Repositorio {
      * @param id Identificador do compromisso a ser buscado
      * @return Compromisso encontrado ou null se não existir
      */
-    //TODO @Guilherme-Andriel buscar por id. Tem que pegar a árvore, transformar numa lista, e buscar por id nessa lista.
    public Compromisso buscarPorId(String id) {
     List<Compromisso> lista = new ArrayList<>();
     percorrerEmOrdem(tree.getRaiz(), lista);
