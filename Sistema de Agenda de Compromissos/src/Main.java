@@ -51,7 +51,7 @@ public class Main {
                     break;
 
                 case 2:
-                    service.listarTodos().forEach(System.out::println);
+                    service.listarTodos();
                     break;
 
                 case 3:
@@ -68,4 +68,3 @@ public class Main {
         }
     }
 }
-// para verificar as coisas basta usar  if(date.equals(/* data e hora da coisa */)) @TheeoHenrique
