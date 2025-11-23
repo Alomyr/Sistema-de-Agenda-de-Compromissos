@@ -1,9 +1,9 @@
 package service;
 
 import annotation.InfoAutor;
+import domain.exception.NegocioException;
 import domain.model.Compromisso;
 import domain.model.CompromissoPessoal;
-import domain.exception.NegocioException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -59,7 +59,7 @@ public class CompromissoService {
 
         LocalDateTime dt = LocalDateTime.of(data, hora);
 
-        if (repo.buscarPorDataHora(dt) != null) {
+        if (repo.getTree().buscarPorDataHora(repo.getTree().getRaiz(), dt) != null) {
             throw new NegocioException("Conflito de horário.");
         }
 
@@ -97,7 +97,7 @@ public class CompromissoService {
 
         LocalDateTime dt = LocalDateTime.of(novaData, novaHora);
 
-        Compromisso conflito = repo.buscarPorDataHora(dt);
+        Compromisso conflito = repo.getTree().buscarPorDataHora(repo.getTree().getRaiz(), dt);
         if (conflito != null && conflito != c) {
             throw new NegocioException("Conflito de horário.");
         }

@@ -2,7 +2,6 @@ package repository;
 
 import annotation.InfoAutor;
 import domain.model.Compromisso;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,14 +19,15 @@ import java.util.List;
 )
 public class Repositorio {
 
-    private final List<Compromisso> lista = new ArrayList<>();
+    private final Arvore tree = new Arvore();
+    private final List<Compromisso> lista = new ArrayList<>(); //tirar isso aqui depois (tem que ser árvore não lista)
 
     /**
      * @brief Adiciona um novo compromisso ao repositório
      * @param c Compromisso a ser salvo no repositório
      */
     public void salvar(Compromisso c) {
-        lista.add(c);
+        tree.Adicionar(c, tree.getRaiz());
     }
 
     /**
@@ -35,7 +35,7 @@ public class Repositorio {
      * @param c Compromisso a ser removido do repositório
      */
     public void remover(Compromisso c) {
-        lista.remove(c);
+        
     }
 
     /**
@@ -60,25 +60,7 @@ public class Repositorio {
                 .orElse(null);
     }
 
-    /**
-     * @brief Busca um compromisso pela data e hora específicas
-     * @param dt Data e hora do compromisso a ser buscado
-     * @return Compromisso encontrado ou null se não existir
-     * 
-     * @note Útil para verificar conflitos de horário na agenda
-     */
-
-    // árvore precisa estar ordenada por data/hora
-        public Compromisso buscarPorDataHora(NoArvore no, LocalDateTime dt) {
-            if (no == null) return null;
-            
-            if (dt.equals(no.dataHora)) {
-                return no.valorCompromisso;
-            } else if (dt.isBefore(no.dataHora)) {
-                return buscarPorDataHora(no.esq, dt);
-            } else {
-                return buscarPorDataHora(no.dir, dt);
-            }
-        }
-
+    public Arvore getTree(){
+        return this.tree;
     }
+}
