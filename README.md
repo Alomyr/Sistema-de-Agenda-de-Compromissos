@@ -272,5 +272,6 @@ Validações em tempo de execução
 - **E-mail e @github:** 
      
      matheuscastro11213@gmail.com / https://github.com/Alomyr
+     theo123b@gmail.com / https://github.com/TheooHenrique
 
 ##### ⚠️ Nota: Este projeto é acadêmico e desenvolvido para fins educacionais, demonstrando a aplicação prática de estruturas de dados e conceitos avançados de POO em Java. Projeto desenvolvido como trabalho final de Linguagem de Programação 2, implementando os conceitos aprendidos durante o curso.
