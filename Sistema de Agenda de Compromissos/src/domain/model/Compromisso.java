@@ -24,7 +24,6 @@ public abstract class Compromisso {
     private String id;
     private LocalDate data;
     private LocalTime hora;
-    private LocalDateTime dataHora;
     private String titulo;
     private String descricao;
     private int prioridade;
